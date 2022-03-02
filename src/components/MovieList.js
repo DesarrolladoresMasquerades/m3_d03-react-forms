@@ -9,26 +9,6 @@ function MovieList() {
   const [moviesData, setMoviesData] = useState(moviesDataJSON);
   const [movies, setMovies] = useState(moviesDataJSON);
 
-  const addNewMovie = (newMovie) => {
-    const updatedMoviesData = [...moviesData, newMovie];
-    const updatedMovies = [...movies, newMovie];
-
-    setMoviesData(updatedMoviesData);
-    setMovies(updatedMovies);
-  };
-
-  const filterMovieList = (str) => {
-    let filteredMovies;
-    if (str === "All") {
-      filteredMovies = moviesData;
-    } else {
-      filteredMovies = moviesData.filter((movie) => {
-        return movie.title[0].toLowerCase() === str.toLowerCase();
-      });
-    }
-
-    setMovies(filteredMovies);
-  };
 
   return (
     <div>
